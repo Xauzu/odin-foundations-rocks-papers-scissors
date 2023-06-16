@@ -17,18 +17,46 @@ function playRound(playerSelection, computerSelection) {
 
     // Tie
     if (userInput === computerSelection) {
-        return "You Tied! Both of you chose " + computerSelection + ".";
+        return "tYou Tied! Both of you chose " + computerSelection + ".";
     }
 
     // Lost
     else if (userInput === "Rock" && computerSelection === "Paper"
             || userInput === "Paper" && computerSelection === "Scissor"
             || userInput === "Scissor" && computerSelection === "Rock") {
-                return "You Lose! " + computerSelection + " beats " + userInput + ".";
+                return "cYou Lose! " + computerSelection + " beats " + userInput + ".";
             } 
 
     // Won
     else {
-        return "You Win! " + userInput + " beats " + computerSelection + "."; 
+        return "pYou Win! " + userInput + " beats " + computerSelection + "."; 
     }
 }
+
+function game() {
+    let playerScore = 0;
+    let computerScore = 0;
+    let totalGames = 0;
+    for (let i = 0; i < 5; i++) {
+        let result = playRound(prompt("Rock, Paper, or Scissor? "), getComputerChoice());
+        let score = result.at(0);
+
+        result = result.slice(1);
+        console.log(result);
+        
+        if (score === "p") {
+            playerScore++;
+        }
+        else if (score === "c") {
+            computerScore++;
+        }
+        
+        console.log();
+
+        totalGames++;
+    }
+
+    console.log("Final score: " + playerScore +"(You) to " + computerScore);
+}
+
+game();
