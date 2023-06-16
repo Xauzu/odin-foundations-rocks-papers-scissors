@@ -1,3 +1,4 @@
+// Uses random number generator to choose an option for the computer
 function getComputerChoice() {
     let rand = Math.floor(Math.random() * 3);
     if (rand === 0) {
@@ -11,6 +12,8 @@ function getComputerChoice() {
     }
 }
 
+// Compares the options chosen btw the player and computer.
+// Returns the final result with the initial letter designating the result.
 function playRound(playerSelection, computerSelection) {
     let input = playerSelection.toLowerCase();
     let userInput = input.at(0).toUpperCase() + input.slice(1);
@@ -33,11 +36,12 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
+// Play the amount of rounds based on the input.
+function game(numGames) {
     let playerScore = 0;
     let computerScore = 0;
     let totalGames = 0;
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < numGames; i++) {
         let result = playRound(prompt("Rock, Paper, or Scissor? "), getComputerChoice());
         let score = result.at(0);
 
@@ -59,4 +63,5 @@ function game() {
     console.log("Final score: " + playerScore +"(You) to " + computerScore);
 }
 
-game();
+// Play 5 games.
+game(5);
