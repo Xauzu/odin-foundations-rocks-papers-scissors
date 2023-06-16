@@ -12,23 +12,23 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    let userInput = playerSelection.toLowerCase();
-    let computerInput = computerSelection.toLowerCase();
+    let input = playerSelection.toLowerCase();
+    let userInput = input.at(0).toUpperCase() + input.slice(1);
 
     // Tie
-    if (userInput === computerInput) {
+    if (userInput === computerSelection) {
         return "You Tied! Both of you chose " + computerSelection + ".";
     }
 
     // Lost
-    else if (userInput === "rock" && computerInput === "paper"
-            || userInput === "paper" && computerInput === "scissor"
-            || userInput === "scissor" && computerInput === "rock") {
-                return "You Lose! " + computerInput + " beats " + userInput + ".";
+    else if (userInput === "Rock" && computerSelection === "Paper"
+            || userInput === "Paper" && computerSelection === "Scissor"
+            || userInput === "Scissor" && computerSelection === "Rock") {
+                return "You Lose! " + computerSelection + " beats " + userInput + ".";
             } 
 
     // Won
     else {
-        return "You Win! " + userInput + " beats " + computerInput + "."; 
+        return "You Win! " + userInput + " beats " + computerSelection + "."; 
     }
 }
