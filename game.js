@@ -15,6 +15,7 @@ function getComputerChoice() {
 // Compares the options chosen btw the player and computer.
 // Returns the final result with the initial letter designating the result.
 function playRound(playerSelection, computerSelection) {
+    // First letter uppercase of userinput
     let input = playerSelection.toLowerCase();
     let userInput = input.at(0).toUpperCase() + input.slice(1);
 
@@ -38,13 +39,19 @@ function playRound(playerSelection, computerSelection) {
 
 // Play the amount of rounds based on the input.
 function game(numGames) {
+    // Variables for scores
     let playerScore = 0;
     let computerScore = 0;
     let totalGames = 0;
+
+
     for (let i = 0; i < numGames; i++) {
         let result = playRound(prompt("Rock, Paper, or Scissor? "), getComputerChoice());
+
+        // Get first letter of the return string to check result
         let score = result.at(0);
 
+        // Getting rid of the first letter to display the round result to user
         result = result.slice(1);
         console.log(result);
         
