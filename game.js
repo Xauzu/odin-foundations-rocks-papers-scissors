@@ -100,12 +100,16 @@ function updateResult(result) {
 }
 
 function init() {
-    const option = document.querySelector(`.button`);
+    const buttons = document.querySelectorAll(`.gameButton`);
     buttons.forEach(button => {
         button.addEventListener('click', 
             () => {
+                console.log("Attempting to add event listener");
                 let result = playRound(button.getAttribute('data-option'));
+                updateResult(result);
             }, getComputerChoice());
+
+        button.addEventListener('transitionend', removeTransition)
     });
 }
 
@@ -114,6 +118,4 @@ function removeTransition(e) {
     this.classList.remove('playing');
 }
 
-const buttons = document.querySelectorAll(".gameButton");
-buttons.forEach(button => button.addEventListener('transitionend', removeTransition));
-window.addEventListener('keydown', playSound);
+init();
