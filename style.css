@@ -1,7 +1,9 @@
-body, .gameButton, .display {
+body, .gameButtons, .display {
     display: flex;
+    justify-content: center;
 }
 
-.gameButton {
-
+.gameButtons {
+    width: 200;
+    height: 150;
 }
