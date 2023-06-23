@@ -37,38 +37,38 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-// Play the amount of rounds based on the input.
-function game(numGames) {
-    // Variables for scores
-    let playerScore = 0;
-    let computerScore = 0;
-    let totalGames = 0;
+// // Play the amount of rounds based on the input. // Old Code
+// function game(numGames) {
+//     // Variables for scores
+//     let playerScore = 0;
+//     let computerScore = 0;
+//     let totalGames = 0;
 
 
-    for (let i = 0; i < numGames; i++) {
-        let result = playRound(prompt("Rock, Paper, or Scissor? "), getComputerChoice());
+//     for (let i = 0; i < numGames; i++) {
+//         let result = playRound(prompt("Rock, Paper, or Scissor? "), getComputerChoice());
 
-        // Get first letter of the return string to check result
-        let score = result.at(0);
+//         // Get first letter of the return string to check result
+//         let score = result.at(0);
 
-        // Getting rid of the first letter to display the round result to user
-        result = result.slice(1);
-        console.log(result);
+//         // Getting rid of the first letter to display the round result to user
+//         result = result.slice(1);
+//         console.log(result);
         
-        if (score === "p") {
-            playerScore++;
-        }
-        else if (score === "c") {
-            computerScore++;
-        }
+//         if (score === "p") {
+//             playerScore++;
+//         }
+//         else if (score === "c") {
+//             computerScore++;
+//         }
         
-        console.log();
+//         console.log();
 
-        totalGames++;
-    }
+//         totalGames++;
+//     }
 
-    console.log("Final score: " + playerScore +"(You) to " + computerScore);
-}
+//     console.log("Final score: " + playerScore +"(You) to " + computerScore);
+// }
 
-// Play 5 games.
-game(5);
+// // Play 5 games.
+// game(5);
