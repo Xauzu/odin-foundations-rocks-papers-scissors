@@ -95,8 +95,8 @@ function updateResult(result) {
     totalGames++;
 
     //Update with round text and score
-    document.querySelector("result").textContent = result;
-    document.querySelector("score").textContent = "(You) " + playerScore + " - " + computerScore + " (computer)";
+    document.querySelector(".result").textContent = result;
+    document.querySelector(".score").textContent = "(You) " + playerScore + " - " + computerScore + " (computer)";
 }
 
 function init() {
