@@ -3,7 +3,28 @@ body, .gameButtons, .display {
     justify-content: center;
 }
 
+body, .display{
+    align-items: center;
+    flex-direction: column;
+}
+
+body, .display, .gameButton{
+    font-size: x-large;
+    font-weight: bold;
+    padding: 25px;
+}
+
+body {
+    margin-top: 25%;
+}
+
 .gameButtons {
     width: 200;
     height: 150;
+    margin: 25px;
+    justify-content: space-between;
+}
+
+.gameButton {
+    margin: 10px;
 }
