@@ -72,3 +72,48 @@ function playRound(playerSelection, computerSelection) {
 
 // // Play 5 games.
 // game(5);
+
+// Variables for scores
+let playerScore = 0;
+let computerScore = 0;
+let totalGames = 0;
+function updateResult(result) {
+    // Get first letter of the return string to check result
+    let score = result.at(0);
+
+    // Getting rid of the first letter to display the round result to user
+    result = result.slice(1);
+    console.log(result);
+
+    //Update with round text and score
+    document.querySelector("result").textContent = result;
+    document.querySelector("score").textContent = "(You) " + playerScore + " - " + computerScore + " (computer)";
+    
+    if (score === "p") {
+        playerScore++;
+    }
+    else if (score === "c") {
+        computerScore++;
+    }
+
+    totalGames++;
+}
+
+function init() {
+    const option = document.querySelector(`.button`);
+    buttons.forEach(button => {
+        button.addEventListener('click', 
+            () => {
+                let result = playRound(button.getAttribute('data-option'));
+            }, getComputerChoice());
+    });
+}
+
+function removeTransition(e) {
+    if (e.propertyName !== 'transform') return; // skip if it is not a transform
+    this.classList.remove('playing');
+}
+
+const buttons = document.querySelectorAll(".gameButton");
+buttons.forEach(button => button.addEventListener('transitionend', removeTransition));
+window.addEventListener('keydown', playSound);
