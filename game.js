@@ -102,12 +102,10 @@ function updateResult(result) {
 function init() {
     const buttons = document.querySelectorAll(`.gameButton`);
     buttons.forEach(button => {
-        button.addEventListener('click', 
-            () => {
-                console.log("Attempting to add event listener");
-                let result = playRound(button.getAttribute('data-option'));
+        button.addEventListener('click', () => {
+                let result = playRound(button.getAttribute('data-option'), getComputerChoice());
                 updateResult(result);
-            }, getComputerChoice());
+        });
 
         button.addEventListener('transitionend', removeTransition)
     });
