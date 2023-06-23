@@ -1,3 +1,7 @@
+body, .gameButton, .display {
+    display: flex;
+}
+
 .gameButton {
-    
+
 }
